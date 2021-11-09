@@ -1,0 +1,48 @@
+.checkbox-container {
+  margin-bottom: 0.5rem;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.checkbox-label span:nth-child(even) {
+  display: inline-block;
+  margin-left: 0.3rem;
+  transform: translateY(-3px);
+}
+
+.checkbox-button {
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.checkbox-button::after {
+  content: "\2714";
+  display: inline-block;
+  position: absolute;
+  color: white;
+  width: 5px;
+  height: 5px;
+  top: -3px;
+  left: 3px;
+  visibility: hidden;
+}
+
+.checkbox:checked + .checkbox-label .checkbox-button {
+  background-color: green;
+}
+
+.checkbox:checked + .checkbox-label .checkbox-button::after {
+  visibility: visible;
+}

@@ -1,0 +1,33 @@
+.category-filter {
+  width: 269px;
+}
+
+.prices-filter {
+  padding-right: 3rem;
+}
+
+.prices-filter_inputs {
+  /* background-color: turquoise; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.5rem;
+}
+
+.prices-filter_forminput {
+  display: inline-block;
+  width: 90px;
+  outline: none;
+  background: #f9f9f9;
+  height: 40px;
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.apply-filters {
+  padding-top: 1rem;
+  padding-right: 4rem;
+  display: flex;
+  justify-content: space-between;
+}

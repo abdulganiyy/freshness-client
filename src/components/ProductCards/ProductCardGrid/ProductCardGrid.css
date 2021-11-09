@@ -1,0 +1,43 @@
+.product-cardgrid {
+  display: flex;
+  padding: 16px;
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.product-cardgrid_content {
+  position: relative;
+}
+
+.product-cardgrid_img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.product-cardgrid_title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.product-cardgrid_description {
+  /* font-family: Open Sans; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.product-cardgrid_price {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.product-cardgrid_footer {
+  display: flex;
+  justify-content: space-between;
+}
