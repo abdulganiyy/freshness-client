@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 
-import { FaStar } from "react-icons/fa";
+import { FaGripHorizontal, FaList, FaTimes } from "react-icons/fa";
 
+import ProductsGrid from "../../components/Products/ProductsGrid/ProductsGrid";
 import ProductsList from "../../components/Products/ProductsList/ProductsList";
 import CategoryFilter from "../../components/CategoryFilter/CategoryFilter";
 
-import products from "../../products";
+import data from "../../products";
 
 import "./Categories.css";
 
 const Categories = ({ match }) => {
-  //   const [products, setProducts] = useState([
-  //     ...products
-  //   ]);
+  const [products] = useState([...data]);
   const [isList, setIsList] = useState(true);
   const [activeBrands, setActiveBrands] = useState([]);
   const [activeRatings, setActiveRatings] = useState([]);
@@ -56,23 +55,54 @@ const Categories = ({ match }) => {
 
   return (
     <div>
-      <div>
-        HomePage/{match.params.category} <span></span>
+      <div className="category-label">
+        <span>HomePage/{match.params.category}</span>
       </div>
-      <div>
-        <span>{match.params.category}</span>
-      </div>
-      <div>
-        {activeRatings.map((item) => (
-          <span key={item.id} style={{ color: "red" }}>
-            {item.id}
+      <div className="categories-header">
+        {match.params.category}
+        <div>
+          <span
+            style={{ marginRight: ".8rem", cursor: "pointer" }}
+            onClick={() => changeListMode()}
+          >
+            <span
+              style={{ display: "inline-block", transform: "translateY(3px)" }}
+            >
+              <FaGripHorizontal />
+            </span>
+            Grid View
           </span>
-        ))}
+          <span
+            style={{ marginRight: ".8rem", cursor: "pointer" }}
+            onClick={() => changeListMode()}
+          >
+            <span
+              style={{ display: "inline-block", transform: "translateY(3px)" }}
+            >
+              <FaList />
+            </span>
+            List View
+          </span>
+          <span>{products.length}</span>products
+        </div>
       </div>
-      <div>
+
+      <div className="filters">
+        Applied filters:
+        {activeRatings.map((item) => (
+          <span key={item.id} className="filter">
+            {item.id} star{" "}
+            <span className="filter-cancel">
+              <FaTimes />
+            </span>
+          </span>
+        ))}{" "}
         {activeBrands.map((item) => (
-          <span key={item.id} style={{ color: "red" }}>
-            {item.id}
+          <span key={item.id} className="filter">
+            {item.id}{" "}
+            <span className="filter-cancel">
+              <FaTimes />
+            </span>
           </span>
         ))}
       </div>
@@ -84,7 +114,11 @@ const Categories = ({ match }) => {
           activeBrandsHandler={activeBrandsHandler}
           activeRatingsHandler={activeRatingsHandler}
         />
-        <ProductsList products={products} />
+        {isList ? (
+          <ProductsList products={products} />
+        ) : (
+          <ProductsGrid products={products} />
+        )}
       </div>
     </div>
   );

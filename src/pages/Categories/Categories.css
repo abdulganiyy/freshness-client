@@ -2,3 +2,35 @@
   display: flex;
   padding: 2rem;
 }
+
+.category-label {
+  padding-left: 2rem;
+}
+
+.categories-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.filter {
+  background-color: #f4f8ec;
+  color: #6a983c;
+  padding: 8px 16px;
+  border-radius: 12px;
+  margin: 0 10px;
+}
+
+.filter-cancel {
+  color: #c8deb3;
+  cursor: pointer;
+  transform: translateY(3px);
+  display: inline-block;
+}
